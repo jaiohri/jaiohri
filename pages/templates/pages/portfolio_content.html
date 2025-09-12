@@ -1,0 +1,103 @@
+<!-- Projects Grid -->
+<section class="py-16 px-4">
+    <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+            {% for project in projects %}
+            <div class="bg-white/10 backdrop-blur-md rounded-2xl overflow-hidden hover:bg-white/20 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+                <div class="aspect-video bg-gray-800">
+                    <img src="{{ project.image }}" alt="{{ project.title }}" class="w-full h-full object-cover">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-2xl font-semibold text-white mb-3">{{ project.title }}</h3>
+                    <p class="text-gray-300 mb-4">{{ project.description }}</p>
+                    
+                    <!-- Technologies -->
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        {% for tech in project.technologies %}
+                        <span class="bg-yellow-300 text-gray-900 px-3 py-1 rounded-full text-sm font-medium">
+                            {{ tech }}
+                        </span>
+                        {% endfor %}
+                    </div>
+                    
+                    <!-- Action Buttons -->
+                    <div class="flex gap-4">
+                        <a href="{{ project.github_url }}" class="flex-1 bg-gray-800 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition-colors duration-300 text-center">
+                            <i class="fab fa-github mr-2"></i>GitHub
+                        </a>
+                        <a href="{{ project.live_url }}" class="flex-1 bg-yellow-300 text-gray-900 px-4 py-2 rounded-lg hover:bg-yellow-200 transition-colors duration-300 text-center font-semibold">
+                            <i class="fas fa-external-link-alt mr-2"></i>Live Demo
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Featured Project Section -->
+<section class="bg-white/10 backdrop-blur-md my-16 mx-4 rounded-3xl overflow-hidden">
+    <div class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+        <h2 class="text-4xl font-light text-center text-white mb-12">Featured Project</h2>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <h3 class="text-3xl font-semibold text-yellow-300 mb-4">E-commerce Platform</h3>
+                <p class="text-lg text-white mb-6 opacity-90">
+                    A comprehensive e-commerce solution built with Django and React, featuring 
+                    user authentication, payment processing, inventory management, and admin dashboard.
+                </p>
+                <div class="space-y-4">
+                    <div class="flex items-center text-white">
+                        <i class="fas fa-check-circle text-yellow-300 mr-3"></i>
+                        <span>Secure payment integration with Stripe</span>
+                    </div>
+                    <div class="flex items-center text-white">
+                        <i class="fas fa-check-circle text-yellow-300 mr-3"></i>
+                        <span>Real-time inventory management</span>
+                    </div>
+                    <div class="flex items-center text-white">
+                        <i class="fas fa-check-circle text-yellow-300 mr-3"></i>
+                        <span>Responsive design for all devices</span>
+                    </div>
+                    <div class="flex items-center text-white">
+                        <i class="fas fa-check-circle text-yellow-300 mr-3"></i>
+                        <span>Admin dashboard for order management</span>
+                    </div>
+                </div>
+                <div class="mt-8">
+                    <a href="#" class="bg-yellow-300 text-gray-900 px-8 py-3 rounded-full font-semibold hover:bg-yellow-200 transition-all duration-300 mr-4">
+                        View Project
+                    </a>
+                    <a href="#" class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-gray-900 transition-all duration-300">
+                        View Code
+                    </a>
+                </div>
+            </div>
+            <div class="aspect-video bg-gray-800 rounded-2xl overflow-hidden">
+                <img src="https://via.placeholder.com/600x400/4F46E5/FFFFFF?text=E-commerce+Platform" alt="E-commerce Platform" class="w-full h-full object-cover">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Stats Section -->
+<section class="py-16 px-4">
+    <div class="max-w-4xl mx-auto text-center text-white">
+        <h2 class="text-4xl font-light mb-12">Project Statistics</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white/10 p-8 rounded-2xl">
+                <div class="text-4xl font-bold text-yellow-300 mb-2">25+</div>
+                <div class="text-lg opacity-90">Projects Completed</div>
+            </div>
+            <div class="bg-white/10 p-8 rounded-2xl">
+                <div class="text-4xl font-bold text-yellow-300 mb-2">15+</div>
+                <div class="text-lg opacity-90">Happy Clients</div>
+            </div>
+            <div class="bg-white/10 p-8 rounded-2xl">
+                <div class="text-4xl font-bold text-yellow-300 mb-2">3+</div>
+                <div class="text-lg opacity-90">Years Experience</div>
+            </div>
+        </div>
+    </div>
+</section>
