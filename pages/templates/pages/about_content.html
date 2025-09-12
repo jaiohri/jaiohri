@@ -1,0 +1,60 @@
+<!-- Skills Section -->
+<section class="py-16 px-4">
+    <div class="max-w-6xl mx-auto text-center text-white">
+        <h2 class="text-4xl font-light mb-12">Skills & Technologies</h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+            {% for skill in skills %}
+            <div class="bg-white/10 p-6 rounded-xl hover:bg-white/20 transition-colors duration-300 hover:scale-105">
+                <div class="text-4xl mb-3">{{ skill.icon }}</div>
+                <div class="font-semibold text-white mb-2">{{ skill.name }}</div>
+                <div class="w-full bg-gray-700 rounded-full h-2">
+                    <div class="bg-yellow-300 h-2 rounded-full transition-all duration-1000" style="width: {{ skill.level }}%"></div>
+                </div>
+                <div class="text-sm text-gray-300 mt-1">{{ skill.level }}%</div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Experience Section -->
+<section class="bg-white/10 backdrop-blur-md my-16 mx-4 rounded-3xl overflow-hidden">
+    <div class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+        <h2 class="text-4xl font-light text-center text-white mb-12">Professional Experience</h2>
+        <div class="space-y-8">
+            {% for exp in experience %}
+            <div class="bg-white/10 p-8 rounded-2xl text-white hover:bg-white/20 transition-all duration-300">
+                <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                    <h3 class="text-2xl font-semibold text-yellow-300">{{ exp.title }}</h3>
+                    <span class="text-lg opacity-80">{{ exp.period }}</span>
+                </div>
+                <div class="text-xl font-medium mb-2">{{ exp.company }}</div>
+                <p class="opacity-90">{{ exp.description }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Personal Story Section -->
+<section class="py-16 px-4">
+    <div class="max-w-4xl mx-auto text-center text-white">
+        <h2 class="text-4xl font-light mb-12">My Story</h2>
+        <div class="bg-white/10 p-8 rounded-2xl text-left">
+            <p class="text-lg mb-6 opacity-90">
+                I started my journey in web development with a curiosity about how websites work. 
+                What began as simple HTML pages has evolved into a passion for creating complex, 
+                user-friendly applications that solve real-world problems.
+            </p>
+            <p class="text-lg mb-6 opacity-90">
+                Over the years, I've had the opportunity to work with various technologies and 
+                frameworks, always focusing on writing clean, maintainable code and creating 
+                exceptional user experiences.
+            </p>
+            <p class="text-lg opacity-90">
+                When I'm not coding, you can find me exploring new technologies, contributing to 
+                open-source projects, or sharing knowledge with the developer community.
+            </p>
+        </div>
+    </div>
+</section>

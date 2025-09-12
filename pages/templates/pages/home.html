@@ -11,10 +11,10 @@
         <div class="text-xl md:text-2xl mb-8 opacity-90 text-white">{{ tagline }}</div>
         <p class="text-lg max-w-2xl mx-auto mb-12 opacity-80 text-white">{{ about }}</p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="#portfolio" class="bg-yellow-300 text-gray-900 px-8 py-3 rounded-full font-semibold hover:bg-yellow-200 hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-xl">
+            <a href="{% url 'pages:portfolio' %}" class="bg-yellow-300 text-gray-900 px-8 py-3 rounded-full font-semibold hover:bg-yellow-200 hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-xl">
                 View My Work
             </a>
-            <a href="#contact" class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-gray-900 hover:-translate-y-1 transition-all duration-300">
+            <a href="{% url 'pages:contact' %}" class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-gray-900 hover:-translate-y-1 transition-all duration-300">
                 Get In Touch
             </a>
         </div>
