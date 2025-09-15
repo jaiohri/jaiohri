@@ -13,11 +13,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+    <link rel="stylesheet" href="{% static 'css/site.css' %}">
     
     {% block extra_css %}{% endblock %}
 </head>
-<body class="min-h-screen font-sans bg-gradient-to-br from-blue-500 to-purple-600">
+<body class="min-h-screen font-sans text-white bg-gradient-to-br from-black via-gray-900 to-black">
+    <div id="loader-overlay" class="fixed left-0 right-0 bottom-0 top-16 z-40 hidden items-center justify-center bg-black">
+        <div class="loader"></div>
+    </div>
     <!-- Header -->
     <header class="bg-white/10 backdrop-blur-md fixed w-full top-0 z-50 border-b border-white/20">
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -52,6 +55,50 @@
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     
     <!-- Custom JavaScript -->
+    <script>
+        (function(){
+            var overlay = document.getElementById('loader-overlay');
+            if(!overlay) return;
+
+            function show(ms){
+                overlay.classList.remove('hidden');
+                overlay.classList.add('flex');
+                if (ms) {
+                    setTimeout(hide, ms);
+                }
+            }
+            function hide(){
+                overlay.classList.add('hidden');
+                overlay.classList.remove('flex');
+            }
+
+            // Initial load behavior: show only on first visit for 2s
+            if (!sessionStorage.getItem('visited')) {
+                show();
+                setTimeout(function(){
+                    hide();
+                    sessionStorage.setItem('visited', '1');
+                }, 2000);
+            } else {
+                // Ensure hidden on subsequent loads
+                hide();
+            }
+
+            // Link clicks to different views: show for 1s
+            document.addEventListener('click', function(e){
+                var a = e.target.closest('a');
+                if(!a) return;
+                var href = a.getAttribute('href');
+                if(!href) return;
+                if (href.startsWith('#')) return; // ignore in-page anchors
+                if (a.target === '_blank') return; // ignore new tab
+                if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return; // respect modifier opens
+                e.preventDefault();
+                show();
+                setTimeout(function(){ window.location.href = href; }, 1000);
+            });
+        })();
+    </script>
     {% block extra_js %}{% endblock %}
 </body>
 </html>
