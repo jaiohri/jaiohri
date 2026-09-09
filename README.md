@@ -143,27 +143,6 @@ currently_learning:
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" width="45"/>
 </p>
 
-### Languages
-Python · C · C++ · Java · Rust · JavaScript · HTML/CSS
-
-### Frameworks
-Django · Flask · React · Tailwind · HTMX · Framer
-
-### AI / Machine Learning
-LLMs · RAG · LangChain · LangGraph · NLP · ANN · CNN · OpenAI APIs · Hugging Face
-
-### Backend / Databases
-PostgreSQL · MongoDB · Redis · Celery
-
-### Cloud / DevOps
-Docker · AWS · Pipedream
-
-### Developer Tools
-Git · VS Code · Cursor · Jira · LangSmith
-
-### Computer Science
-Data Structures & Algorithms · Operating Systems · OOP · DBMS · Software Design · Software Testing
-
 ---
 
 <h2> 🏆 &nbsp;Awards & Scholarships</h2>
@@ -180,13 +159,6 @@ Data Structures & Algorithms · Operating Systems · OOP · DBMS · Software Des
 Bachelor of Science in Computer Engineering – Software Option (Co-op)
 Edmonton, AB · Class of 2027
 GPA: 3.9/4.0
-
----
-
-<h2> 📜 &nbsp;Certifications</h2>
-
-- Machine Learning Specialization — DeepLearning.AI
-- Deep Learning Specialization — DeepLearning.AI
 
 ---
 
